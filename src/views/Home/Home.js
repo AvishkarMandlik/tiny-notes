@@ -9,9 +9,22 @@ function Home() {
   const [notes, setNotes] = useState([
     {
       title: "Note",
-      content: "You Can Add More Note To This List.",
-    },
-  ]);
+      content: "You Can Add More Note To This List."
+    }
+  ])
+
+  useEffect(()=>{
+    const notes = localStorage.getItem("notes")
+    if(notes){
+      setNotes(JSON.parse(notes))
+    }
+  }, [])
+
+  useEffect(()=>{
+    if(notes.length > 1){
+      localStorage.setItem("notes", JSON.stringify(notes))
+    }
+  }, [notes])
 
   const [title, setTitle] = useState("")
   const [content, setContent] = useState("")
@@ -40,10 +53,10 @@ function Home() {
       icon: "success",
     });
 
-
     setTitle("")
     setContent("")
   }
+
   return (
     <div>
       <div className="app-title-container">
@@ -53,13 +66,13 @@ function Home() {
         <div className="col-md-6">
           <div className="notes-container">
             {notes.map((note, index) => {
-              return <Note title={note.title} content={note.content} />;
+              return <Note title={note.title} content={note.content} noteIndex={index} />
             })}
           </div>
         </div>
-        <div className="col-md-6">
+        <div className="col-md-6 mt-4">
           <div className="note-editor-container">
-            <h3 className="text-center">Add Notes</h3>
+            <h4 className="text-center">Add Your Notes here...</h4>
             <form>
               <div>
                 <input type="text" onChange={(e)=>{setTitle(e.target.value)}} value={title} className="form-control mt-4" placeholder="Note title" />
