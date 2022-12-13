@@ -4,9 +4,9 @@ import {Link} from 'react-router-dom'
 function Navbar() {
   return (
     <div>
-      <nav class="navbar navbar-expand-lg bg-light">
+      <nav class="navbar navbar-expand-lg bg-light rounded ">
         <div class="container-fluid">
-          <Link class="navbar-brand" href="#">📝 tiny-notes</Link>
+          <Link class="navbar-brand fst-italic fw-bold" href="#">📝 Tiny-Notes</Link>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
             aria-controls="navbarNav"
             aria-expanded="false"
