@@ -64,13 +64,13 @@ function Home() {
       </div>
       <div className="row">
         <div className="col-md-6">
-          <div className="notes-container">
+          <div className="notes-container mt-2">
             {notes.map((note, index) => {
               return <Note title={note.title} content={note.content} noteIndex={index} />
             })}
           </div>
         </div>
-        <div className="col-md-6 mt-4">
+        <div className="col-md-6 mt-5">
           <div className="note-editor-container">
             <h4 className="text-center">Add Your Notes here...</h4>
             <form>
