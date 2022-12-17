@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import swal from 'sweetalert';
 import "./Home.css";
 
-import Navbar from "./../../components/Navbar/Navbar";
+// import Navbar from "./../../components/Navbar/Navbar";
 import Note from "./../../components/Note/Note";
 
 function Home() {
